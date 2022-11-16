@@ -4,7 +4,7 @@ def call() {
         stages {
             stage('build') {
                 steps {
-                    sh 'pip install -r Receiver/requirements.txt'
+                    sh 'pip install -r Storage-Kafka/requirements.txt'
                 }
             }
         }
