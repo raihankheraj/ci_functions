@@ -9,7 +9,7 @@ def call(service) {
             }
             stage('Python Lint') {
                 steps {
-                    sh 'pylint-fail-under --fail_under 5.0 app.py'
+                    sh "pylint-fail-under --fail_under 5.0 app.py"
                 }
             }
 
