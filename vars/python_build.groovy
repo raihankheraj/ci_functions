@@ -28,6 +28,15 @@ def call(service, dockerRepoName, imageName) {
                 }
             }
 
+            stage('Docker Lint') {
+                steps {
+                    dir("${service}") {
+                        sh "hadolint Dockerfile"
+                    }
+                }
+            }
+
+
 
         }
     }
