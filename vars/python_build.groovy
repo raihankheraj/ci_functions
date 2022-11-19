@@ -29,6 +29,11 @@ def call(service, dockerRepoName, imageName) {
             }
 
             stage('Docker Lint') {
+                agent{
+                    docker {
+                        image 'hadolint/hadolint:latest-debian'
+                    }
+                }
                 steps {
                     dir("${service}") {
                         sh "hadolint Dockerfile"
