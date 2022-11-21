@@ -36,7 +36,7 @@ def call(service, dockerRepoName, imageName) {
                 }
                 steps {
                     dir("${service}") {
-                        sh "hadolint Dockerfile"
+                        sh "hadolint --ignore DL3008 --ignore DL3009 --ignore DL3015 --ignore DL3042 Dockerfile"
                     }
                 }
             }
